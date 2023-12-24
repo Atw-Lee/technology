@@ -1,0 +1,9 @@
+.glide{
+    width: 200%;
+}
+.glide__slide{
+    width: 50%;
+}
+.glide__bullet--active{
+    background-color: rgb(6 182 212);
+}
