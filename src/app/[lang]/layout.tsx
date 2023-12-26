@@ -2,13 +2,13 @@
  * @Author: atwlee
  * @Date: 2023-12-17 14:29:42
  * @LastEditors: atwlee
- * @LastEditTime: 2023-12-24 00:34:00
+ * @LastEditTime: 2023-12-26 21:49:47
  * @Description:
  * @FilePath: /technology/src/app/[lang]/layout.tsx
  */
 import type { Metadata } from "next";
-import "animate.css";
 import { LangType } from "../api/getDashboard";
+import "animate.css";
 import "../globals.css";
 
 export async function generateStaticParams() {

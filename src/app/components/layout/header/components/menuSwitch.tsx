@@ -2,7 +2,7 @@
  * @Author: atwlee
  * @Date: 2023-12-17 22:50:39
  * @LastEditors: atwlee
- * @LastEditTime: 2023-12-24 20:57:44
+ * @LastEditTime: 2023-12-26 21:36:11
  * @Description:
  * @FilePath: /technology/src/app/components/layout/header/components/menuSwitch.tsx
  */
@@ -32,6 +32,7 @@ function Index(props: IProps) {
                 true,
               "bg-cyan-500 ": open,
             })}
+            aria-label="menu"
           >
             <span className="inline-block w-2/3 h-[3px] transition-all duration-300 group-hover:w-full bg-white" />
             <span className="inline-block w-full h-[3px] bg-white" />
