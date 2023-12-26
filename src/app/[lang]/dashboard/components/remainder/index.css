@@ -1,9 +1,10 @@
-.glide{
-    width: 200%;
+.dashboard-swiper-wrapper .swiper-pagination .swiper-pagination-bullet{
+    width: 20px;
+    height: 4px;
+    border-radius: 0;
+    background-color: #fff;
+    opacity: 1;
 }
-.glide__slide{
-    width: 50%;
-}
-.glide__bullet--active{
+.dashboard-swiper-wrapper .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active{
     background-color: rgb(6 182 212);
 }

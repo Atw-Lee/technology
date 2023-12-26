@@ -2,7 +2,7 @@
  * @Author: atwlee
  * @Date: 2023-12-17 14:29:42
  * @LastEditors: atwlee
- * @LastEditTime: 2023-12-21 20:57:21
+ * @LastEditTime: 2023-12-25 21:39:34
  * @Description:
  * @FilePath: /technology/tailwind.config.ts
  */
@@ -15,11 +15,6 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-      },
       keyframes: {
         "width-process": {
           "0%": { width: "0" },
