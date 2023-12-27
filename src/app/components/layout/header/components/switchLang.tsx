@@ -2,12 +2,12 @@
  * @Author: atwlee
  * @Date: 2023-12-17 23:22:21
  * @LastEditors: atwlee
- * @LastEditTime: 2023-12-23 23:26:51
+ * @LastEditTime: 2023-12-27 21:40:09
  * @Description:
- * @FilePath: /technology/src/app/components/header/components/switchLang.tsx
+ * @FilePath: /technology/src/app/components/layout/header/components/switchLang.tsx
  */
 "use client";
-import { LangType } from "@/app/api/getDashboard";
+import type { LangType } from "@/app/type";
 
 function Index({ lang }: { lang: LangType }) {
   const handleSwitch = () => {

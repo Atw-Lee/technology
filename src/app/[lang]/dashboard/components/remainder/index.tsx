@@ -2,7 +2,7 @@
  * @Author: atwlee
  * @Date: 2023-12-22 21:58:00
  * @LastEditors: atwlee
- * @LastEditTime: 2023-12-26 21:31:10
+ * @LastEditTime: 2023-12-27 21:39:36
  * @Description:
  * @FilePath: /technology/src/app/[lang]/dashboard/components/remainder/index.tsx
  */
@@ -11,10 +11,10 @@ import Link from "next/link";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
-import classNames from "classnames";
-import { LangType } from "@/app/api/getDashboard";
-import "swiper/css";
 import "swiper/css/pagination";
+import "swiper/css/autoplay";
+import classNames from "classnames";
+import type { LangType } from "@/app/type";
 import "./index.css";
 
 interface IProps {

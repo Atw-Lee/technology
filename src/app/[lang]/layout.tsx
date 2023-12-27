@@ -2,32 +2,34 @@
  * @Author: atwlee
  * @Date: 2023-12-17 14:29:42
  * @LastEditors: atwlee
- * @LastEditTime: 2023-12-26 21:49:47
+ * @LastEditTime: 2023-12-27 21:52:58
  * @Description:
  * @FilePath: /technology/src/app/[lang]/layout.tsx
  */
 import type { Metadata } from "next";
-import { LangType } from "../api/getDashboard";
+import type { LangType, PageProps } from "@/app/type";
 import "animate.css";
+import "swiper/css";
 import "../globals.css";
+import { getMetaData } from "../api/getMeta";
 
 export async function generateStaticParams() {
   return [{ lang: "en" }, { lang: "zh" }];
 }
 
-export const metadata: Metadata = {
-  title: "齐治科技",
-  description: "齐治科技",
-};
+export async function generateMetadata(props: PageProps): Promise<Metadata> {
+  const { layout } = await getMetaData(props.params.lang);
+  return {
+    ...layout,
+  };
+}
 
 export default function RootLayout({
   children,
   params,
 }: {
   children: React.ReactNode;
-  params: {
-    lang: LangType;
-  };
+  params: PageProps["params"];
 }) {
   return (
     <html lang={params.lang}>

@@ -2,7 +2,7 @@
  * @Author: atwlee
  * @Date: 2023-12-19 22:16:45
  * @LastEditors: atwlee
- * @LastEditTime: 2023-12-23 23:26:09
+ * @LastEditTime: 2023-12-27 21:39:22
  * @Description:
  * @FilePath: /technology/src/app/[lang]/dashboard/components/dataCenter/index.tsx
  */
@@ -10,7 +10,7 @@
 import { useRouter } from "next/navigation";
 import classNames from "classnames";
 import withWrapper from "../wrapperHoc";
-import { LangType } from "@/app/api/getDashboard";
+import type { LangType } from "@/app/type";
 
 interface IProps {
   lang: LangType;

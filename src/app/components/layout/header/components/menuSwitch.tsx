@@ -2,7 +2,7 @@
  * @Author: atwlee
  * @Date: 2023-12-17 22:50:39
  * @LastEditors: atwlee
- * @LastEditTime: 2023-12-26 21:36:11
+ * @LastEditTime: 2023-12-27 21:40:02
  * @Description:
  * @FilePath: /technology/src/app/components/layout/header/components/menuSwitch.tsx
  */
@@ -13,13 +13,15 @@ import { Popover, Disclosure, Transition } from "@headlessui/react";
 import { ChevronUpIcon } from "@heroicons/react/20/solid";
 import classNames from "classnames";
 import { useWindowSize } from "react-use";
+import type { LangType } from "@/app/type";
 
 interface IProps {
   menus: { title: string; data: { title: string; link: string }[] }[];
+  lang: LangType;
 }
 
 function Index(props: IProps) {
-  const { menus } = props;
+  const { menus, lang } = props;
   const { width } = useWindowSize();
   const isMobile = !!(width && width < 768); // 768 是tailwind的md
   return (
@@ -84,7 +86,10 @@ function Index(props: IProps) {
                           >
                             {menu.data.map((m) => (
                               <li key={m.link}>
-                                <Link href={m.link} className={"leading-10"}>
+                                <Link
+                                  href={`/${lang + m.link}`}
+                                  className={"leading-10"}
+                                >
                                   {m.title}
                                 </Link>
                               </li>
@@ -113,7 +118,7 @@ function Index(props: IProps) {
                             className={classNames({ "mr-2": index === 1 })}
                           >
                             <Link
-                              href={m.link}
+                              href={`/${lang + m.link}`}
                               className={"hover:text-cyan-500 leading-7"}
                             >
                               {m.title}

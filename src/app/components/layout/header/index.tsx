@@ -2,7 +2,7 @@
  * @Author: atwlee
  * @Date: 2023-12-17 14:59:33
  * @LastEditors: atwlee
- * @LastEditTime: 2023-12-24 15:59:26
+ * @LastEditTime: 2023-12-26 21:53:53
  * @Description:
  * @FilePath: /technology/src/app/components/layout/header/index.tsx
  */
@@ -35,7 +35,7 @@ async function Index({ lang }: { lang: LangType }) {
           {data.tel}
           {data.telNumber}
         </p>
-        <MenuSwitch menus={data.menus} />
+        <MenuSwitch menus={data.menus} lang={lang} />
         <SwitchLang lang={lang} />
       </div>
     </div>

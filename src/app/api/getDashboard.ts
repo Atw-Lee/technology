@@ -2,13 +2,13 @@
  * @Author: atwlee
  * @Date: 2023-12-23 23:14:45
  * @LastEditors: atwlee
- * @LastEditTime: 2023-12-24 15:47:12
+ * @LastEditTime: 2023-12-27 21:39:41
  * @Description:
  * @FilePath: /technology/src/app/api/getDashboard.ts
  */
 
 import "server-only";
-export type LangType = "en" | "zh";
+import type { LangType } from "@/app/type";
 
 const data = {
   zh: {
@@ -137,7 +137,7 @@ const data = {
           {
             title: "加入齐治",
             link: "/about/recruit",
-          }
+          },
         ],
       },
     ],
@@ -272,7 +272,7 @@ const data = {
           {
             title: "Join Us",
             link: "/about/recruit",
-          }
+          },
         ],
       },
     ],

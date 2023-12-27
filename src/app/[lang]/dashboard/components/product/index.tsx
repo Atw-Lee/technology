@@ -2,14 +2,14 @@
  * @Author: atwlee
  * @Date: 2023-12-20 23:01:48
  * @LastEditors: atwlee
- * @LastEditTime: 2023-12-24 15:06:45
+ * @LastEditTime: 2023-12-27 21:39:29
  * @Description:
  * @FilePath: /technology/src/app/[lang]/dashboard/components/product/index.tsx
  */
 "use client";
 import { useRouter } from "next/navigation";
 import classNames from "classnames";
-import { LangType } from "@/app/api/getDashboard";
+import type { LangType } from "@/app/type";
 import withWrapper from "../wrapperHoc";
 
 interface IProps {

@@ -2,23 +2,28 @@
  * @Author: atwlee
  * @Date: 2023-12-17 14:29:42
  * @LastEditors: atwlee
- * @LastEditTime: 2023-12-24 00:17:03
+ * @LastEditTime: 2023-12-27 21:57:46
  * @Description:
  * @FilePath: /technology/src/app/[lang]/dashboard/page.tsx
  */
+import { Metadata } from "next";
+import { getDashboardData } from "@/app/api/getDashboard";
+import { getMetaData } from "@/app/api/getMeta";
+import type { PageProps } from "@/app/type";
 import Layout from "@/app/components/layout";
 import DataCenter from "./components/dataCenter";
 import Product from "./components/product";
 import Remainder from "./components/remainder";
-import { LangType, getDashboardData } from "@/app/api/getDashboard";
 
-export default async function Home({
-  params: { lang },
-}: {
-  params: {
-    lang: LangType;
+export async function generateMetadata(props: PageProps): Promise<Metadata> {
+  const { dashboard } = await getMetaData(props.params.lang);
+  return {
+    ...dashboard,
   };
-}) {
+}
+
+export default async function Home(props: PageProps) {
+  const { lang } = props.params;
   const data = await getDashboardData(lang);
   const itemDefaultClass =
     "relative w-full h-1/3 md:w-1/3 md:h-full overflow-hidden";
@@ -52,11 +57,7 @@ export default async function Home({
             poster="/dashboard/item2poster.png"
             className={videoDefaultClass}
           />
-          <Product
-            lang={lang}
-            back={data.back}
-            {...data.productionSolution}
-          />
+          <Product lang={lang} back={data.back} {...data.productionSolution} />
         </div>
         <div className={`${itemDefaultClass}`}>
           <Remainder remainder={data.remainder} lang={lang} />
