@@ -2,7 +2,7 @@
  * @Author: atwlee
  * @Date: 2023-12-17 15:30:53
  * @LastEditors: atwlee
- * @LastEditTime: 2023-12-27 21:39:54
+ * @LastEditTime: 2023-12-28 21:01:03
  * @Description:
  * @FilePath: /technology/src/app/components/layout/index.tsx
  */
@@ -21,7 +21,7 @@ function Layout({
     <div>
       <Header lang={lang} />
       <SideBar lang={lang} />
-      <div className="pt-[60px]">{children}</div>
+      <main className="pt-[60px]">{children}</main>
       <Footer lang={lang} />
     </div>
   );

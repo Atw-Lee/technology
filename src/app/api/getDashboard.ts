@@ -2,11 +2,10 @@
  * @Author: atwlee
  * @Date: 2023-12-23 23:14:45
  * @LastEditors: atwlee
- * @LastEditTime: 2023-12-27 21:39:41
+ * @LastEditTime: 2023-12-28 20:42:43
  * @Description:
  * @FilePath: /technology/src/app/api/getDashboard.ts
  */
-
 import "server-only";
 import type { LangType } from "@/app/type";
 
