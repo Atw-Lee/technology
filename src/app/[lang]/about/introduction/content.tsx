@@ -2,12 +2,12 @@
  * @Author: atwlee
  * @Date: 2023-12-26 22:02:07
  * @LastEditors: atwlee
- * @LastEditTime: 2023-12-27 22:34:06
+ * @LastEditTime: 2023-12-28 20:22:51
  * @Description:
  * @FilePath: /technology/src/app/[lang]/about/introduction/content.tsx
  */
 "use client";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Swiper, SwiperRef, SwiperSlide } from "swiper/react";
 import { EffectFade } from "swiper/modules";
 import "swiper/css/effect-fade";
@@ -24,8 +24,20 @@ function Index({
     content: string[];
   }[];
 }) {
-  const [active, setActive] = useState(0);
+  const [active, setActive] = useState<number>();
   const swiperRef = useRef<SwiperRef>(null);
+
+  // 解决刚进来第一张就有动画的需求
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      clearTimeout(timer);
+      setActive(0);
+    }, 100);
+    return () => {
+      clearTimeout(timer);
+    };
+  }, []);
+
   return (
     <div className="relative w-screen" style={{ height: "calc(100vh - 60px)" }}>
       <Swiper
@@ -40,7 +52,7 @@ function Index({
       >
         {data.map((item, index) => {
           return (
-            <SwiperSlide key={index} className={"h-full"}>
+            <SwiperSlide key={index} className="h-full">
               <Image
                 src={item.img}
                 alt={item.title}
@@ -48,10 +60,10 @@ function Index({
                 height={1000}
                 quality={100}
                 className={classNames({
-                  "w-full h-full object-cover transition-transform duration-[2000ms]":
+                  "w-full h-full object-cover transition-transform duration-[2500ms]":
                     true,
-                  "scale-110": active !== index,
-                  "scale-100": active === index,
+                  "scale-100": active !== index,
+                  "scale-110": active === index,
                 })}
               />
             </SwiperSlide>
@@ -73,8 +85,7 @@ function Index({
               "opacity-100 after:w-[34px] after:max-w-[34px]": index === active,
             })}
             onClick={() => {
-              setActive(index);
-              swiperRef.current?.swiper.slideTo(index);
+              swiperRef.current?.swiper.slideToLoop(index);
             }}
           >
             {i.title}
