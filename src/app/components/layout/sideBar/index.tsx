@@ -2,17 +2,17 @@
  * @Author: atwlee
  * @Date: 2023-12-17 15:32:48
  * @LastEditors: atwlee
- * @LastEditTime: 2023-12-24 00:23:43
+ * @LastEditTime: 2023-12-29 22:28:30
  * @Description:
- * @FilePath: /technology/src/app/components/sideBar/index.tsx
+ * @FilePath: /technology/src/app/components/layout/sideBar/index.tsx
  */
 import Link from "next/link";
 import Image from "next/image";
 import ScrollTop from "./scrollTop";
-import { LangType, getDashboardData } from "@/app/api/getDashboard";
+import { getDashboardData } from "@/app/api/getDashboard";
 
-async function Index({ lang }: { lang: LangType }) {
-  const data = await getDashboardData(lang);
+async function Index() {
+  const data = await getDashboardData();
 
   const defaultClass =
     "absolute left-0 h-[50px] bg-neutral-950 rounded-l-md hover:bg-cyan-500 cursor-pointer";

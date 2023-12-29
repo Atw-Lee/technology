@@ -2,30 +2,29 @@
  * @Author: atwlee
  * @Date: 2023-12-19 22:16:45
  * @LastEditors: atwlee
- * @LastEditTime: 2023-12-27 21:39:22
+ * @LastEditTime: 2023-12-29 22:54:45
  * @Description:
- * @FilePath: /technology/src/app/[lang]/dashboard/components/dataCenter/index.tsx
+ * @FilePath: /technology/src/app/components/dashboard/dataCenter/index.tsx
  */
 "use client";
 import { useRouter } from "next/navigation";
 import classNames from "classnames";
 import withWrapper from "../wrapperHoc";
-import type { LangType } from "@/app/type";
 
 interface IProps {
-  lang: LangType;
   title: string;
   subtitle: string;
   desc: string;
   lernaMore: string;
   isCover: boolean;
+  link: string;
 }
 
 function Index(props: IProps) {
   const router = useRouter();
-  const { title, subtitle, desc, lernaMore, lang, isCover } = props;
+  const { title, subtitle, desc, lernaMore, isCover, link } = props;
   const handleClickLernaMore = () => {
-    router.push(`/${lang}/about/data-center`);
+    router.push(link);
   };
 
   return (

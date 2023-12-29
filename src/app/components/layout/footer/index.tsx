@@ -2,16 +2,16 @@
  * @Author: atwlee
  * @Date: 2023-12-18 20:05:06
  * @LastEditors: atwlee
- * @LastEditTime: 2023-12-23 23:24:17
+ * @LastEditTime: 2023-12-29 22:25:59
  * @Description:
- * @FilePath: /technology/src/app/components/footer/index.tsx
+ * @FilePath: /technology/src/app/components/layout/footer/index.tsx
  */
 import Link from "next/link";
 import Image from "next/image";
-import { LangType, getDashboardData } from "@/app/api/getDashboard";
+import { getDashboardData } from "@/app/api/getDashboard";
 
-async function Index({ lang }: { lang: LangType }) {
-  const data = await getDashboardData(lang);
+async function Index() {
+  const data = await getDashboardData();
 
   return (
     <div className="h-20 bg-neutral-700 text-neutral-400 text-xs flex flex-col gap-1 items-center justify-center sm:flex-row sm:gap-3">
@@ -24,9 +24,7 @@ async function Index({ lang }: { lang: LangType }) {
       >
         {data.copyright}
       </Link>
-      <div
-        className={`${lang === "en" ? "hidden" : ""} flex gap-2 items-center`}
-      >
+      <div className={"flex gap-2 items-center"}>
         <Image
           src="/layout/icp.png"
           alt="icp"

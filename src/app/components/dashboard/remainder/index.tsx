@@ -2,9 +2,9 @@
  * @Author: atwlee
  * @Date: 2023-12-22 21:58:00
  * @LastEditors: atwlee
- * @LastEditTime: 2023-12-27 21:39:36
+ * @LastEditTime: 2023-12-29 22:56:44
  * @Description:
- * @FilePath: /technology/src/app/[lang]/dashboard/components/remainder/index.tsx
+ * @FilePath: /technology/src/app/components/dashboard/remainder/index.tsx
  */
 "use client";
 import Link from "next/link";
@@ -14,11 +14,9 @@ import { Pagination, Autoplay } from "swiper/modules";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
 import classNames from "classnames";
-import type { LangType } from "@/app/type";
 import "./index.css";
 
 interface IProps {
-  lang: LangType;
   remainder: {
     title: string;
     subtitle: string;
@@ -28,7 +26,7 @@ interface IProps {
 }
 
 function Index(props: IProps) {
-  const { remainder, lang } = props;
+  const { remainder } = props;
   return (
     <Swiper
       className="h-full dashboard-swiper-wrapper"
@@ -46,10 +44,7 @@ function Index(props: IProps) {
             className="relative h-full bg-cover bg-no-repeat cursor-pointer"
             tag="li"
           >
-            <Link
-              href={`/${lang}${i.link}`}
-              className="relative block w-full h-full"
-            >
+            <Link href={i.link} className="relative block w-full h-full">
               <Image
                 src={i.img}
                 alt={i.title}

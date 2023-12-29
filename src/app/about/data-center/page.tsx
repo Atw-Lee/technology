@@ -2,30 +2,28 @@
  * @Author: atwlee
  * @Date: 2023-12-20 22:49:10
  * @LastEditors: atwlee
- * @LastEditTime: 2023-12-28 22:28:38
+ * @LastEditTime: 2023-12-29 22:51:24
  * @Description:
- * @FilePath: /technology/src/app/[lang]/about/data-center/page.tsx
+ * @FilePath: /technology/src/app/about/data-center/page.tsx
  */
 import { Metadata } from "next";
 import Layout from "@/app/components/layout";
 import { getMetaData } from "@/app/api/getMeta";
 import { getDataCenterData } from "@/app/api/getDataCenter";
-import type { PageProps } from "@/app/type";
 import Image from "next/image";
 
-export async function generateMetadata(props: PageProps): Promise<Metadata> {
-  const { dataCenter } = await getMetaData(props.params.lang);
+export async function generateMetadata(): Promise<Metadata> {
+  const { dataCenter } = await getMetaData();
   return {
     ...dataCenter,
   };
 }
 
-async function Index(props: PageProps) {
-  const { lang } = props.params;
-  const data = await getDataCenterData(lang);
+async function Index() {
+  const data = await getDataCenterData();
 
   return (
-    <Layout lang={lang}>
+    <Layout>
       <div className="relative h-60 sm:h-72 flex items-center justify-center flex-col text-white">
         <Image
           src={data.headerBg}

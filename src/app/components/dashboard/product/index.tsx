@@ -2,18 +2,16 @@
  * @Author: atwlee
  * @Date: 2023-12-20 23:01:48
  * @LastEditors: atwlee
- * @LastEditTime: 2023-12-27 21:39:29
+ * @LastEditTime: 2023-12-29 22:58:45
  * @Description:
- * @FilePath: /technology/src/app/[lang]/dashboard/components/product/index.tsx
+ * @FilePath: /technology/src/app/components/dashboard/product/index.tsx
  */
 "use client";
 import { useRouter } from "next/navigation";
 import classNames from "classnames";
-import type { LangType } from "@/app/type";
 import withWrapper from "../wrapperHoc";
 
 interface IProps {
-  lang: LangType;
   title: string;
   subtitle: string;
   isCover: boolean;
@@ -26,7 +24,7 @@ interface IProps {
 
 function Index(props: IProps) {
   const router = useRouter();
-  const { title, subtitle, lang, isCover, systems } = props;
+  const { title, subtitle, isCover, systems } = props;
 
   return (
     <>
@@ -58,7 +56,7 @@ function Index(props: IProps) {
             key={index}
             className="mt-5 hover:text-cyan-500"
             onClick={() => {
-              router.push(`/${lang}${i.link}`);
+              router.push(i.link);
             }}
           >
             <p className="font-bold leading-6 mb-2">{i.title}</p>
