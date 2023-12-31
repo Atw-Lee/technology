@@ -2,9 +2,9 @@
  * @Author: atwlee
  * @Date: 2023-12-26 22:02:07
  * @LastEditors: atwlee
- * @LastEditTime: 2023-12-28 20:22:51
+ * @LastEditTime: 2023-12-31 20:42:12
  * @Description:
- * @FilePath: /technology/src/app/[lang]/about/introduction/content.tsx
+ * @FilePath: /technology/src/app/about/introduction/content.tsx
  */
 "use client";
 import { useEffect, useRef, useState } from "react";
@@ -20,8 +20,8 @@ function Index({
 }: {
   data: {
     title: string;
-    img: string;
-    content: string[];
+    image: string;
+    desc: string;
   }[];
 }) {
   const [active, setActive] = useState<number>();
@@ -54,7 +54,7 @@ function Index({
           return (
             <SwiperSlide key={index} className="h-full">
               <Image
-                src={item.img}
+                src={item.image}
                 alt={item.title}
                 width={1000}
                 height={1000}
@@ -102,17 +102,15 @@ function Index({
           })}
           key={index}
         >
-          {i.content.map((i, index) => (
-            <p
-              key={index}
-              className={"animate__animated animate__fadeInDown"}
-              style={{
-                animationDelay: index === 0 ? "0.5s" : "0.3s",
-              }}
-            >
-              {i}
-            </p>
-          ))}
+          <p
+            key={index}
+            className="animate__animated animate__fadeInDown whitespace-pre-wrap"
+            style={{
+              animationDelay: "0.3s",
+            }}
+          >
+            {i.desc}
+          </p>
         </div>
       ))}
     </div>
