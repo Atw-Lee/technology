@@ -2,9 +2,9 @@
  * @Author: atwlee
  * @Date: 2023-12-20 23:03:05
  * @LastEditors: atwlee
- * @LastEditTime: 2023-12-22 21:54:31
+ * @LastEditTime: 2023-12-31 11:28:45
  * @Description:
- * @FilePath: /technology/src/app/[lang]/dashboard/components/wrapperHoc.tsx
+ * @FilePath: /technology/src/app/components/dashboard/wrapperHoc.tsx
  */
 "use client";
 import classNames from "classnames";
@@ -13,7 +13,7 @@ import { useState } from "react";
 type O = "isCover";
 
 const withCover = <P,>(WrappedComponent: React.ComponentType<P>) => {
-  const EnhancedComponent = (props: Omit<P, O> & { back: string }) => {
+  const EnhancedComponent = (props: Omit<P, O>) => {
     const [isCover, setIsCover] = useState(false);
     return (
       <div
@@ -55,7 +55,7 @@ const withCover = <P,>(WrappedComponent: React.ComponentType<P>) => {
               setIsCover(false);
             }}
           >
-            {props.back}
+            返回
           </p>
           <WrappedComponent {...(props as P)} isCover={isCover} />
         </div>

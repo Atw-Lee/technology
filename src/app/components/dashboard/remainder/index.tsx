@@ -2,7 +2,7 @@
  * @Author: atwlee
  * @Date: 2023-12-22 21:58:00
  * @LastEditors: atwlee
- * @LastEditTime: 2023-12-29 22:56:44
+ * @LastEditTime: 2023-12-31 11:53:44
  * @Description:
  * @FilePath: /technology/src/app/components/dashboard/remainder/index.tsx
  */
@@ -19,9 +19,9 @@ import "./index.css";
 interface IProps {
   remainder: {
     title: string;
-    subtitle: string;
+    sub_title: string;
     link: string;
-    img: string;
+    image: string;
   }[];
 }
 
@@ -46,7 +46,7 @@ function Index(props: IProps) {
           >
             <Link href={i.link} className="relative block w-full h-full">
               <Image
-                src={i.img}
+                src={i.image}
                 alt={i.title}
                 width={500}
                 height={500}
@@ -64,7 +64,7 @@ function Index(props: IProps) {
                   {i.title}
                 </p>
                 <pre className="text-sm leading-6 whitespace-break-spaces">
-                  {i.subtitle}
+                  {i.sub_title}
                 </pre>
               </div>
             </Link>

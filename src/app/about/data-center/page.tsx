@@ -2,22 +2,13 @@
  * @Author: atwlee
  * @Date: 2023-12-20 22:49:10
  * @LastEditors: atwlee
- * @LastEditTime: 2023-12-29 22:51:24
+ * @LastEditTime: 2023-12-31 12:11:18
  * @Description:
  * @FilePath: /technology/src/app/about/data-center/page.tsx
  */
-import { Metadata } from "next";
 import Layout from "@/app/components/layout";
-import { getMetaData } from "@/app/api/getMeta";
 import { getDataCenterData } from "@/app/api/getDataCenter";
 import Image from "next/image";
-
-export async function generateMetadata(): Promise<Metadata> {
-  const { dataCenter } = await getMetaData();
-  return {
-    ...dataCenter,
-  };
-}
 
 async function Index() {
   const data = await getDataCenterData();

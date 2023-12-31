@@ -2,7 +2,7 @@
  * @Author: atwlee
  * @Date: 2023-12-19 22:16:45
  * @LastEditors: atwlee
- * @LastEditTime: 2023-12-29 22:54:45
+ * @LastEditTime: 2023-12-31 12:00:28
  * @Description:
  * @FilePath: /technology/src/app/components/dashboard/dataCenter/index.tsx
  */
@@ -15,14 +15,13 @@ interface IProps {
   title: string;
   subtitle: string;
   desc: string;
-  lernaMore: string;
   isCover: boolean;
   link: string;
 }
 
 function Index(props: IProps) {
   const router = useRouter();
-  const { title, subtitle, desc, lernaMore, isCover, link } = props;
+  const { title, subtitle, desc, isCover, link } = props;
   const handleClickLernaMore = () => {
     router.push(link);
   };
@@ -34,13 +33,14 @@ function Index(props: IProps) {
       </p>
       <p
         className={classNames({
-          "w-[102px] h-10 leading-[38px] mt-6 mb-7 border border-white border-solid rounded-[20px] text-center hover:bg-cyan-500 hover:border-cyan-500 transition-colors":
+          "w-[102px] h-10 leading-[38px] mt-6 mb-7 border border-white border-solid rounded-[20px] text-center  transition-colors":
             true,
+          "hover:bg-cyan-500 hover:border-cyan-500": true,
           hidden: !isCover,
         })}
         onClick={handleClickLernaMore}
       >
-        {lernaMore}
+        了解更多
       </p>
       <hr
         className={classNames({
@@ -58,11 +58,11 @@ function Index(props: IProps) {
       </pre>
       <p
         className={classNames({
-          "mt-10 text-sm hover:text-cyan-500 leading-6 animate__animated animate__fadeInUp":
-            true,
+          "mt-10 text-sm leading-6 animate__animated animate__fadeInUp": true,
+          "hover:text-cyan-500": false,
           hidden: !isCover,
         })}
-        onClick={handleClickLernaMore}
+        // onClick={handleClickLernaMore}
       >
         {desc}
       </p>

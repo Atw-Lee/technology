@@ -2,7 +2,7 @@
  * @Author: atwlee
  * @Date: 2023-12-17 22:50:39
  * @LastEditors: atwlee
- * @LastEditTime: 2023-12-29 22:57:37
+ * @LastEditTime: 2023-12-31 11:18:20
  * @Description:
  * @FilePath: /technology/src/app/components/layout/header/components/menuSwitch.tsx
  */
@@ -14,8 +14,13 @@ import { ChevronUpIcon } from "@heroicons/react/20/solid";
 import classNames from "classnames";
 import { useWindowSize } from "react-use";
 
+export interface MenuItem {
+  title: string;
+  children: { title: string; link: string }[];
+}
+
 interface IProps {
-  menus: { title: string; data: { title: string; link: string }[] }[];
+  menus: MenuItem[];
 }
 
 function Index(props: IProps) {
@@ -82,9 +87,12 @@ function Index(props: IProps) {
                             as="ul"
                             className={"pl-5 text-base"}
                           >
-                            {menu.data.map((m) => (
+                            {menu.children.map((m) => (
                               <li key={m.link}>
-                                <Link href={m.link} className={"leading-10"}>
+                                <Link
+                                  href={m.link ?? "/"}
+                                  className={"leading-10"}
+                                >
                                   {m.title}
                                 </Link>
                               </li>
@@ -107,13 +115,13 @@ function Index(props: IProps) {
                           "h-[84px]": index === 1,
                         })}
                       >
-                        {menu.data.map((m) => (
+                        {menu.children.map((m) => (
                           <li
                             key={m.link}
                             className={classNames({ "mr-2": index === 1 })}
                           >
                             <Link
-                              href={m.link}
+                              href={m.link ?? "/"}
                               className={"hover:text-cyan-500 leading-7"}
                             >
                               {m.title}

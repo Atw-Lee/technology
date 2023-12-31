@@ -2,7 +2,7 @@
  * @Author: atwlee
  * @Date: 2023-12-20 23:01:48
  * @LastEditors: atwlee
- * @LastEditTime: 2023-12-29 22:58:45
+ * @LastEditTime: 2023-12-31 12:01:25
  * @Description:
  * @FilePath: /technology/src/app/components/dashboard/product/index.tsx
  */
@@ -15,21 +15,36 @@ interface IProps {
   title: string;
   subtitle: string;
   isCover: boolean;
-  systems: {
-    title: string;
-    desc: string;
-    link: string;
-  }[];
+  desc: string;
+  link: string;
+  // systems: {
+  //   title: string;
+  //   desc: string;
+  //   link: string;
+  // }[];
 }
 
 function Index(props: IProps) {
   const router = useRouter();
-  const { title, subtitle, isCover, systems } = props;
-
+  const { title, subtitle, isCover, desc, link } = props;
+  const handleClickLernaMore = () => {
+    router.push(link);
+  };
   return (
     <>
       <p className="font-bold text-xl sm:text-2xl md:text-[28px] mb-4">
         {title}
+      </p>
+      <p
+        className={classNames({
+          "w-[102px] h-10 leading-[38px] mt-6 mb-7 border border-white border-solid rounded-[20px] text-center  transition-colors":
+            true,
+          "hover:bg-cyan-500 hover:border-cyan-500": true,
+          hidden: !isCover,
+        })}
+        onClick={handleClickLernaMore}
+      >
+        了解更多
       </p>
       <hr
         className={classNames({
@@ -45,7 +60,7 @@ function Index(props: IProps) {
       >
         {subtitle}
       </pre>
-      <ul
+      {/* <ul
         className={classNames({
           "mt-10 animate__animated animate__fadeInUp": true,
           hidden: !isCover,
@@ -63,7 +78,16 @@ function Index(props: IProps) {
             <p className="leading-6 opacity-70">{i.desc}</p>
           </li>
         ))}
-      </ul>
+      </ul> */}
+      <pre
+        className={classNames({
+          "mt-10 animate__animated animate__fadeInUp whitespace-break-spaces":
+            true,
+          hidden: !isCover,
+        })}
+      >
+        {desc}
+      </pre>
     </>
   );
 }
