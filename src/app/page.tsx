@@ -2,7 +2,7 @@
  * @Author: atwlee
  * @Date: 2023-12-17 14:29:42
  * @LastEditors: atwlee
- * @LastEditTime: 2023-12-31 12:20:16
+ * @LastEditTime: 2023-12-31 21:28:18
  * @Description:
  * @FilePath: /technology/src/app/page.tsx
  */
@@ -27,7 +27,7 @@ export default async function Home() {
       <main className="flex flex-wrap" style={{ height: "calc(100vh - 60px)" }}>
         <div className={`${itemDefaultClass}`}>
           <video
-            src={process.env.RESOURCE_HOST + (dataCenter.video ?? "")}
+            src={process.env.NEXT_PUBLIC_RESOURCE_HOST + (dataCenter.video ?? "")}
             muted
             autoPlay
             loop
@@ -42,7 +42,7 @@ export default async function Home() {
         </div>
         <div className={`${itemDefaultClass}`}>
           <video
-            src={process.env.RESOURCE_HOST + (product.video ?? "")}
+            src={process.env.NEXT_PUBLIC_RESOURCE_HOST + (product.video ?? "")}
             muted
             autoPlay
             loop
@@ -59,7 +59,7 @@ export default async function Home() {
           <Remainder
             remainder={(remainder ?? []).map((i) => ({
               ...i,
-              image: process.env.RESOURCE_HOST + i.image,
+              image: process.env.NEXT_PUBLIC_RESOURCE_HOST + i.image,
             }))}
           />
         </div>

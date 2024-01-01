@@ -22,7 +22,7 @@ function Index(props: IProps) {
     <div className="fixed top-0 w-screen flex justify-between h-[60px] bg-neutral-700 px-[4%] text-white z-10">
       <Link href={`/`} className="flex items-center shrink-0">
         <Image
-          src={process.env.RESOURCE_HOST + logo}
+          src={process.env.NEXT_PUBLIC_RESOURCE_HOST + logo}
           alt={"logo"}
           width={128}
           height={28}

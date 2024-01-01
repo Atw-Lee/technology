@@ -2,7 +2,7 @@
  * @Author: atwlee
  * @Date: 2023-12-17 14:29:42
  * @LastEditors: atwlee
- * @LastEditTime: 2023-12-31 12:20:48
+ * @LastEditTime: 2024-01-01 23:10:48
  * @Description:
  * @FilePath: /technology/src/app/layout.tsx
  */
@@ -12,7 +12,7 @@ import "./globals.css";
 import { Metadata } from "next/types";
 import { getMetaData } from "./api/getMeta";
 
-export async function generateMetadata(): Promise<Metadata> {
+export async function generateMetadata() {
   const metaData = await getMetaData("1");
   return {
     ...metaData,

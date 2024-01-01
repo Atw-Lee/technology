@@ -40,14 +40,14 @@ function Index(props: IProps) {
   return (
     <ul className="fixed w-[50px] right-0 top-[45vh] hidden sm:block z-10">
       <li className={`${defaultClass} top-0`}>
-        <ScrollTop img={process.env.RESOURCE_HOST + topImg} />
+        <ScrollTop img={process.env.NEXT_PUBLIC_RESOURCE_HOST + topImg} />
       </li>
       <li
         className={`${defaultClass} w-32 top-[51px] flex items-center justify-start hover:left-[-78px] transition-all duration-300`}
       >
         <div className="w-[50px] h-full flex items-center justify-center">
           <Image
-            src={process.env.RESOURCE_HOST + consultImg}
+            src={process.env.NEXT_PUBLIC_RESOURCE_HOST + consultImg}
             alt={"consult"}
             width={18}
             height={18}
@@ -65,7 +65,7 @@ function Index(props: IProps) {
         >
           <div className="w-[50px] h-full flex items-center justify-center">
             <Image
-              src={process.env.RESOURCE_HOST + telImg}
+              src={process.env.NEXT_PUBLIC_RESOURCE_HOST + telImg}
               alt={"tel"}
               width={18}
               height={18}
@@ -78,14 +78,14 @@ function Index(props: IProps) {
       <li className={`${defaultClass} top-[153px] group`}>
         <div className={qrCodeClass}>
           <Image
-            src={process.env.RESOURCE_HOST + wechatImg}
+            src={process.env.NEXT_PUBLIC_RESOURCE_HOST + wechatImg}
             alt={"wechat"}
             width={18}
             height={18}
             className="w-[18px] h-[18px]"
           />
           <Image
-            src={process.env.RESOURCE_HOST + wechatQRImg}
+            src={process.env.NEXT_PUBLIC_RESOURCE_HOST + wechatQRImg}
             alt="wechatQC"
             width={120}
             height={120}
@@ -96,14 +96,14 @@ function Index(props: IProps) {
       <li className={`${defaultClass} top-[204px] group`}>
         <div className={qrCodeClass}>
           <Image
-            src={process.env.RESOURCE_HOST + tiktokImg}
+            src={process.env.NEXT_PUBLIC_RESOURCE_HOST + tiktokImg}
             alt={"tiktok"}
             width={18}
             height={18}
             className="w-[18px] h-[18px]"
           />
           <Image
-            src={process.env.RESOURCE_HOST + tiktokQRImg}
+            src={process.env.NEXT_PUBLIC_RESOURCE_HOST + tiktokQRImg}
             alt="tiktokQC"
             width={120}
             height={120}

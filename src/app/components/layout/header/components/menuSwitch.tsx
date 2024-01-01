@@ -2,7 +2,7 @@
  * @Author: atwlee
  * @Date: 2023-12-17 22:50:39
  * @LastEditors: atwlee
- * @LastEditTime: 2023-12-31 11:18:20
+ * @LastEditTime: 2024-01-01 18:57:55
  * @Description:
  * @FilePath: /technology/src/app/components/layout/header/components/menuSwitch.tsx
  */
@@ -45,7 +45,7 @@ function Index(props: IProps) {
           </Popover.Button>
           <Transition
             as={Fragment}
-            enter="transition ease-out duration-200"
+            enter="transition ease-out duration-500"
             enterFrom="opacity-0 -translate-y-1"
             enterTo="opacity-100 translate-y-0"
             leave="transition ease-in duration-150"
@@ -87,8 +87,8 @@ function Index(props: IProps) {
                             as="ul"
                             className={"pl-5 text-base"}
                           >
-                            {menu.children.map((m) => (
-                              <li key={m.link}>
+                            {menu.children.map((m, index) => (
+                              <li key={index}>
                                 <Link
                                   href={m.link ?? "/"}
                                   className={"leading-10"}
@@ -115,9 +115,9 @@ function Index(props: IProps) {
                           "h-[84px]": index === 1,
                         })}
                       >
-                        {menu.children.map((m) => (
+                        {menu.children.map((m, index) => (
                           <li
-                            key={m.link}
+                            key={index}
                             className={classNames({ "mr-2": index === 1 })}
                           >
                             <Link
