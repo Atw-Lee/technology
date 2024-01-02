@@ -2,14 +2,17 @@
  * @Author: atwlee
  * @Date: 2024-01-01 18:51:52
  * @LastEditors: atwlee
- * @LastEditTime: 2024-01-01 23:02:42
+ * @LastEditTime: 2024-01-02 20:27:46
  * @Description:
- * @FilePath: /technology/src/app/about/news/banner.tsx
+ * @FilePath: /technology/src/app/components/pageBanner/index.tsx
  */
-import { getMenuData } from "@/app/api/getMeta";
 import Image from "next/image";
-async function banner() {
-  const { title, banner } = await getMenuData("6");
+interface IProps {
+  title: string;
+  banner: string;
+}
+function banner(props: IProps) {
+  const { title, banner } = props;
   return (
     <div className=" relative h-60 sm:h-72 flex items-center justify-center text-white">
       <Image

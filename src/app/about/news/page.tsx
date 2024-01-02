@@ -2,15 +2,14 @@
  * @Author: atwlee
  * @Date: 2023-12-24 15:40:00
  * @LastEditors: atwlee
- * @LastEditTime: 2024-01-01 23:10:29
+ * @LastEditTime: 2024-01-02 20:29:13
  * @Description:
  * @FilePath: /technology/src/app/about/news/page.tsx
  */
-import { Metadata } from "next/types";
 import Layout from "@/app/components/layout";
 import Content from "./content";
-import Banner from "./banner";
-import { getMetaData } from "@/app/api/getMeta";
+import { getMenuData, getMetaData } from "@/app/api/getMeta";
+import PageBanner from "@/app/components/pageBanner";
 
 export async function generateMetadata() {
   const metaData = await getMetaData("6");
@@ -20,9 +19,10 @@ export async function generateMetadata() {
 }
 
 async function Index() {
+  const data = await getMenuData("6");
   return (
     <Layout>
-      <Banner />
+      <PageBanner {...data} />
       <Content />
     </Layout>
   );
