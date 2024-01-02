@@ -2,7 +2,7 @@
  * @Author: atwlee
  * @Date: 2023-12-24 15:40:00
  * @LastEditors: atwlee
- * @LastEditTime: 2024-01-02 20:29:13
+ * @LastEditTime: 2024-01-02 20:42:16
  * @Description:
  * @FilePath: /technology/src/app/about/news/page.tsx
  */
@@ -19,10 +19,10 @@ export async function generateMetadata() {
 }
 
 async function Index() {
-  const data = await getMenuData("6");
+  const pageBannerData = await getMenuData("6");
   return (
     <Layout>
-      <PageBanner {...data} />
+      <PageBanner {...pageBannerData} />
       <Content />
     </Layout>
   );
