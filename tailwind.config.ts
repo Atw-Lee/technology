@@ -2,7 +2,7 @@
  * @Author: atwlee
  * @Date: 2023-12-17 14:29:42
  * @LastEditors: atwlee
- * @LastEditTime: 2023-12-25 21:39:34
+ * @LastEditTime: 2024-01-03 21:17:13
  * @Description:
  * @FilePath: /technology/tailwind.config.ts
  */
@@ -19,11 +19,14 @@ const config: Config = {
         "width-process": {
           "0%": { width: "0" },
           "100%": { width: "100%" },
-        }
+        },
       },
       animation: {
-        "width-process": "width-process 700ms linear 1"
+        "width-process": "width-process 700ms linear 1",
       },
+    },
+    colors: {
+      primary: "#25cad2",
     },
   },
   plugins: [],
