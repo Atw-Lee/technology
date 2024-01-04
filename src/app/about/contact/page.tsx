@@ -30,7 +30,7 @@ async function Index() {
             key={i.id}
             className="w-full md:w-[49%] mb-6 px-8 py-1 text-sm leading-6 text-[#666] cursor-pointer rounded hover:bg-[#f5f5f5] group"
           >
-            <p className="font-bold group-hover:text-cyan-500">{i.title}</p>
+            <p className="font-bold group-hover:text-primary">{i.title}</p>
             {i.address && <p>办公地址：{i.address}</p>}
             {i.phone && <p>总部电话：{i.phone}</p>}
           </li>

@@ -44,8 +44,8 @@ const withCover = <P,>(WrappedComponent: React.ComponentType<P>) => {
         >
           <p
             className={classNames({
-              "relative mb-10 pl-3 hover:text-cyan-500 w-fit": true,
-              "before:content-[''] before:absolute before:left-0 before:top-1/2 before:-rotate-45 before:-translate-y-1/2 before:w-[6px] before:h-[6px] before:border-l before:border-t before:border-white hover:before:border-cyan-500":
+              "relative mb-10 pl-3 hover:text-primary w-fit": true,
+              "before:content-[''] before:absolute before:left-0 before:top-1/2 before:-rotate-45 before:-translate-y-1/2 before:w-[6px] before:h-[6px] before:border-l before:border-t before:border-white hover:before:border-primary":
                 true,
               hidden: !isCover,
               "block md:hidden": isCover,

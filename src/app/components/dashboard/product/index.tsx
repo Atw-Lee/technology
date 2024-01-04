@@ -39,7 +39,7 @@ function Index(props: IProps) {
         className={classNames({
           "w-[102px] h-10 leading-[38px] mt-6 mb-7 border border-white border-solid rounded-[20px] text-center  transition-colors":
             true,
-          "hover:bg-cyan-500 hover:border-cyan-500": true,
+          "hover:bg-primary hover:border-primary": true,
           hidden: !isCover,
         })}
         onClick={handleClickLernaMore}
@@ -69,7 +69,7 @@ function Index(props: IProps) {
         {systems.map((i, index) => (
           <li
             key={index}
-            className="mt-5 hover:text-cyan-500"
+            className="mt-5 hover:text-primary"
             onClick={() => {
               router.push(i.link);
             }}

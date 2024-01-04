@@ -33,7 +33,7 @@ function Index(props: IProps) {
     tiktokQRImg,
   } = props;
   const defaultClass =
-    "absolute left-0 h-[50px] bg-neutral-950 rounded-l-md hover:bg-cyan-500 cursor-pointer";
+    "absolute left-0 h-[50px] bg-neutral-950 rounded-l-md hover:bg-primary cursor-pointer";
   const qrCodeClass =
     "relative w-[50px] h-full flex items-center justify-center after:content-[''] after:w-[10px] after:h-[10px] after:hidden group-hover:after:block after:absolute after:left-[-14px] after:top-[-10px] after:bg-gradient-to-bl after:from-white after:from-50% after:to-50%";
 

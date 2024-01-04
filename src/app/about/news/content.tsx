@@ -57,7 +57,7 @@ function Index() {
                 ></Image>
               </div>
               <div className="w-[80%] sm:w-[90%] min-w-0 px-0 pr-4 sm:px-8">
-                <p className="text-lg text-[#333] font-medium whitespace-nowrap overflow-hidden text-ellipsis group-hover:text-cyan-500">
+                <p className="text-lg text-[#333] font-medium whitespace-nowrap overflow-hidden text-ellipsis group-hover:text-primary">
                   {i.title ?? ""}
                 </p>
                 <p className="text-sm text-[#999] ">{i.desc}</p>
@@ -69,7 +69,7 @@ function Index() {
                 <span className="text-xs font-bold text-[#cdcccc]">
                   {splitTimeStr(i.created_at)?.year}
                 </span>
-                <span className="w-7 h-7 leading-[26px] sm:w-9 sm:h-9 sm:leading-[34px] rounded-[50%] bg-[#ccc] text-white text-center text-xs sm:text-base group-hover:bg-cyan-500">
+                <span className="w-7 h-7 leading-[26px] sm:w-9 sm:h-9 sm:leading-[34px] rounded-[50%] bg-[#ccc] text-white text-center text-xs sm:text-base group-hover:bg-primary">
                   {">>"}
                 </span>
               </div>

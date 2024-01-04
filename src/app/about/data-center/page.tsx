@@ -41,7 +41,7 @@ async function Index() {
             {data.dikw.content.map((i, index) => (
               <li
                 key={index}
-                className="lg:flex flex-col justify-end pt-5 pb-3 lg:pb-2 lg:h-[85px] border-b border-cyan-500 border-dashed text-[#666]"
+                className="lg:flex flex-col justify-end pt-5 pb-3 lg:pb-2 lg:h-[85px] border-b border-primary border-dashed text-[#666]"
               >
                 <h4 className="text-base font-bold">{i.title}</h4>
                 <p className="w-full lg:w-[65%] text-sm leading-6">{i.desc}</p>

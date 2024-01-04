@@ -35,7 +35,7 @@ function Index(props: IProps) {
             className={classNames({
               "w-[40px] h-[40px] p-[7px] rounded-md group flex flex-col justify-center gap-[6px] cursor-pointer ml-6 focus:outline-none":
                 true,
-              "bg-cyan-500 ": open,
+              "bg-primary ": open,
             })}
             aria-label="menu"
           >
@@ -122,7 +122,7 @@ function Index(props: IProps) {
                           >
                             <Link
                               href={m.link ?? "/"}
-                              className={"hover:text-cyan-500 leading-7"}
+                              className={"hover:text-primary leading-7"}
                             >
                               {m.title}
                             </Link>
