@@ -2,7 +2,7 @@
  * @Author: atwlee
  * @Date: 2023-12-31 11:58:42
  * @LastEditors: atwlee
- * @LastEditTime: 2024-01-04 21:05:37
+ * @LastEditTime: 2024-01-04 21:10:01
  * @Description:
  * @FilePath: /technology/src/app/product/page.tsx
  */
@@ -88,7 +88,7 @@ async function Index({ searchParams }: { searchParams: { id: string } }) {
           {/* <ul className="mt-10 flex flex-wrap">123</ul> */}
           <ul className="mt-10 flex flex-wrap max-w-6xl mx-auto gap-[2%]">
             {classic_case[0].images.map((i, index) => (
-              <li key={index} className="w-full sm:w-[48%] md:w-[15%] lg:w-[12.5%] mb-8">
+              <li key={index} className="w-[48%] md:w-[32%] lg:w-[12.5%] mb-8">
                 <Image
                   src={process.env.NEXT_PUBLIC_RESOURCE_HOST + i}
                   alt={i}
