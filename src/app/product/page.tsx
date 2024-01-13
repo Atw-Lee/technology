@@ -2,7 +2,7 @@
  * @Author: atwlee
  * @Date: 2023-12-31 11:58:42
  * @LastEditors: atwlee
- * @LastEditTime: 2024-01-13 10:46:13
+ * @LastEditTime: 2024-01-13 13:04:49
  * @Description:
  * @FilePath: /technology/src/app/product/page.tsx
  */
@@ -18,7 +18,7 @@ export async function generateMetadata({
 }: {
   searchParams: { id: string };
 }) {
-  const metaData = await getProductMetaData(Number(searchParams.id));
+  const metaData = await getProductMetaData(searchParams.id);
   return {
     ...metaData,
   };

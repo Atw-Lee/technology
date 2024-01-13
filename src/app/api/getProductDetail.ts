@@ -2,7 +2,7 @@
  * @Author: atwlee
  * @Date: 2024-01-01 22:01:23
  * @LastEditors: atwlee
- * @LastEditTime: 2024-01-03 20:43:03
+ * @LastEditTime: 2024-01-13 13:01:35
  * @Description:
  * @FilePath: /technology/src/app/api/getProductDetail.ts
  */
@@ -15,10 +15,20 @@ interface RootObject {
   core_function: Core[];
   application_scene: Application[];
   classic_case: Classic[];
+  seoData: {
+    seotitle: string;
+    seokeyword: string;
+    seodesc: string;
+  };
 }
 
 interface Classic {
-  alid: string[];
+  aldatas: {
+    title: string;
+    desc: string;
+    id: number;
+    type: number;
+  }[];
   images: string[];
 }
 

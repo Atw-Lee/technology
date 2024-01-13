@@ -2,7 +2,7 @@
  * @Author: atwlee
  * @Date: 2024-01-12 22:38:15
  * @LastEditors: atwlee
- * @LastEditTime: 2024-01-13 10:11:47
+ * @LastEditTime: 2024-01-13 13:13:23
  * @Description:
  * @FilePath: /technology/src/app/business/case/content.tsx
  */
@@ -10,8 +10,9 @@
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { CaseItem } from "@/app/api/getCase";
+import Image from "next/image";
 import classNames from "classnames";
+import { CaseItem } from "@/app/api/getCase";
 
 interface IProps {
   caseTypes?: {
@@ -43,6 +44,11 @@ function Index(props: IProps) {
 
   return (
     <>
+      <Banner
+        title={"3000+大型客户"}
+        banner={currentCaseData?.image ?? ""}
+        titleClassName="mt-[-40px] sm:mt-0"
+      />
       <ul className="relative w-[90%] mx-auto flex justify-center flex-wrap rounded-t-3xl border-t border-l border-r border-white border-solid mt-[-89px] sm:mt-[-61px] overflow-hidden">
         {caseTypes?.map((i, index) => (
           <li
@@ -96,3 +102,31 @@ function Index(props: IProps) {
 }
 
 export default Index;
+
+function Banner(props: {
+  title: string;
+  banner: string;
+  titleClassName?: string;
+}) {
+  const { title, banner, titleClassName } = props;
+  return (
+    <div className="relative h-60 sm:h-72 flex items-center justify-center text-white">
+      <Image
+        src={process.env.NEXT_PUBLIC_RESOURCE_HOST + banner}
+        alt={title}
+        width={1000}
+        height={1000}
+        quality={100}
+        className="absolute w-full h-full object-cover"
+      ></Image>
+      <h1
+        className={classNames([
+          "relative text-2xl sm:text-4xl font-medium",
+          titleClassName,
+        ])}
+      >
+        {title}
+      </h1>
+    </div>
+  );
+}

@@ -2,15 +2,22 @@
  * @Author: atwlee
  * @Date: 2024-01-01 18:50:17
  * @LastEditors: atwlee
- * @LastEditTime: 2024-01-02 20:30:34
+ * @LastEditTime: 2024-01-13 12:57:42
  * @Description:
  * @FilePath: /technology/src/app/about/news-detail/page.tsx
  */
 import { notFound } from "next/navigation";
 import Layout from "@/app/components/layout";
 import { getNewsDetail } from "@/app/api/getNewsDetail";
-import { getMenuData } from "@/app/api/getMeta";
+import { getMenuData, getMetaData } from "@/app/api/getMeta";
 import PageBanner from "@/app/components/pageBanner";
+
+export async function generateMetadata() {
+  const metaData = await getMetaData("6");
+  return {
+    ...metaData,
+  };
+}
 
 async function Index({ searchParams }: { searchParams: { id: string } }) {
   if (!searchParams.id) {

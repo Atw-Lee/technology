@@ -2,7 +2,7 @@
  * @Author: atwlee
  * @Date: 2023-12-23 10:41:48
  * @LastEditors: atwlee
- * @LastEditTime: 2024-01-13 10:28:37
+ * @LastEditTime: 2024-01-13 13:09:43
  * @Description:
  * @FilePath: /technology/src/app/business/case/page.tsx
  */
@@ -10,7 +10,6 @@ import { notFound } from "next/navigation";
 import { getCaseData } from "@/app/api/getCase";
 import { getDashboardData } from "@/app/api/getDashboard";
 import Layout from "@/app/components/layout";
-import PageBanner from "@/app/components/pageBanner";
 import Content from "./content";
 import { getCaseTypeMetaData } from "@/app/api/getMeta";
 
@@ -50,11 +49,6 @@ async function Index({
 
   return (
     <Layout>
-      <PageBanner
-        title={"3000+大型客户"}
-        banner={caseData[0]?.image}
-        titleClassName="mt-[-40px] sm:mt-0"
-      />
       <Content
         caseTypes={caseTypes}
         caseType={searchParams.type}
@@ -66,3 +60,4 @@ async function Index({
 }
 
 export default Index;
+

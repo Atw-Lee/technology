@@ -2,7 +2,7 @@
  * @Author: atwlee
  * @Date: 2024-01-01 18:51:52
  * @LastEditors: atwlee
- * @LastEditTime: 2024-01-13 10:13:50
+ * @LastEditTime: 2024-01-13 13:07:57
  * @Description:
  * @FilePath: /technology/src/app/components/pageBanner/index.tsx
  */
@@ -13,7 +13,7 @@ interface IProps {
   banner: string;
   titleClassName?: string;
 }
-function banner(props: IProps) {
+function Banner(props: IProps) {
   const { title, banner, titleClassName } = props;
   return (
     <div className="relative h-60 sm:h-72 flex items-center justify-center text-white">
@@ -37,4 +37,4 @@ function banner(props: IProps) {
   );
 }
 
-export default banner;
+export default Banner;
