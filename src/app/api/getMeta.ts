@@ -2,7 +2,7 @@
  * @Author: atwlee
  * @Date: 2023-12-27 21:47:01
  * @LastEditors: atwlee
- * @LastEditTime: 2024-01-13 10:45:22
+ * @LastEditTime: 2024-01-13 11:30:02
  * @Description:
  * @FilePath: /technology/src/app/api/getMeta.ts
  */
@@ -56,7 +56,7 @@ export const getCaseTypeMetaData = async (id: number): Promise<Metadata> => {
   };
 };
 
-//
+// 获取产品的meta数据
 export const getProductMetaData = async (id: number): Promise<Metadata> => {
   const data = await request<
     {
