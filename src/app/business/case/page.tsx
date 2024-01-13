@@ -2,7 +2,7 @@
  * @Author: atwlee
  * @Date: 2023-12-23 10:41:48
  * @LastEditors: atwlee
- * @LastEditTime: 2024-01-13 10:14:11
+ * @LastEditTime: 2024-01-13 10:28:37
  * @Description:
  * @FilePath: /technology/src/app/business/case/page.tsx
  */
@@ -12,6 +12,7 @@ import { getDashboardData } from "@/app/api/getDashboard";
 import Layout from "@/app/components/layout";
 import PageBanner from "@/app/components/pageBanner";
 import Content from "./content";
+import { getCaseTypeMetaData } from "@/app/api/getMeta";
 
 const typeObj = {
   gov: "1",
@@ -22,13 +23,18 @@ const typeObj = {
   enterprise: "6",
 };
 
-// export async function generateMetadata({
-//   searchParams,
-// }: {
-//   searchParams: { type: string };
-// }) {
-//   console.log("type", searchParams);
-// }
+export async function generateMetadata({
+  searchParams,
+}: {
+  searchParams: { type: keyof typeof typeObj };
+}) {
+  const metaData = await getCaseTypeMetaData(
+    Number(typeObj[searchParams.type])
+  );
+  return {
+    ...metaData,
+  };
+}
 
 async function Index({
   searchParams,
@@ -44,7 +50,11 @@ async function Index({
 
   return (
     <Layout>
-      <PageBanner title={"3000+大型客户"} banner={caseData[0]?.image} titleClassName="mt-[-40px] sm:mt-0" />
+      <PageBanner
+        title={"3000+大型客户"}
+        banner={caseData[0]?.image}
+        titleClassName="mt-[-40px] sm:mt-0"
+      />
       <Content
         caseTypes={caseTypes}
         caseType={searchParams.type}

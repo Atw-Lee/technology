@@ -2,7 +2,7 @@
  * @Author: atwlee
  * @Date: 2023-12-23 23:14:45
  * @LastEditors: atwlee
- * @LastEditTime: 2023-12-31 21:28:25
+ * @LastEditTime: 2024-01-13 10:27:39
  * @Description:
  * @FilePath: /technology/src/app/api/getDashboard.ts
  */
@@ -21,8 +21,12 @@ interface MenuData {
   isshowpc: number;
   link: string;
   children: {
+    id: number;
     title: string;
     link: string;
+    seotitle: string;
+    seokeyword: string;
+    seodesc: string;
   }[];
 }
 

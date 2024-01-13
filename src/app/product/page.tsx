@@ -2,7 +2,7 @@
  * @Author: atwlee
  * @Date: 2023-12-31 11:58:42
  * @LastEditors: atwlee
- * @LastEditTime: 2024-01-04 21:10:01
+ * @LastEditTime: 2024-01-13 10:46:13
  * @Description:
  * @FilePath: /technology/src/app/product/page.tsx
  */
@@ -11,6 +11,18 @@ import { notFound } from "next/navigation";
 import Layout from "@/app/components/layout";
 import { getProductDetail } from "@/app/api/getProductDetail";
 import PageBanner from "@/app/components/pageBanner";
+import { getProductMetaData } from "@/app/api/getMeta";
+
+export async function generateMetadata({
+  searchParams,
+}: {
+  searchParams: { id: string };
+}) {
+  const metaData = await getProductMetaData(Number(searchParams.id));
+  return {
+    ...metaData,
+  };
+}
 
 async function Index({ searchParams }: { searchParams: { id: string } }) {
   if (!searchParams.id) {
