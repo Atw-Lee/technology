@@ -2,7 +2,7 @@
  * @Author: atwlee
  * @Date: 2024-01-01 22:01:23
  * @LastEditors: atwlee
- * @LastEditTime: 2024-01-13 13:01:35
+ * @LastEditTime: 2024-01-14 14:44:20
  * @Description:
  * @FilePath: /technology/src/app/api/getProductDetail.ts
  */
@@ -27,7 +27,7 @@ interface Classic {
     title: string;
     desc: string;
     id: number;
-    type: number;
+    type: string;
   }[];
   images: string[];
 }

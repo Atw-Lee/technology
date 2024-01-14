@@ -2,7 +2,7 @@
  * @Author: atwlee
  * @Date: 2023-12-31 11:58:42
  * @LastEditors: atwlee
- * @LastEditTime: 2024-01-13 13:04:49
+ * @LastEditTime: 2024-01-14 14:45:29
  * @Description:
  * @FilePath: /technology/src/app/product/page.tsx
  */
@@ -12,6 +12,8 @@ import Layout from "@/app/components/layout";
 import { getProductDetail } from "@/app/api/getProductDetail";
 import PageBanner from "@/app/components/pageBanner";
 import { getProductMetaData } from "@/app/api/getMeta";
+import Link from "next/link";
+import { idToCase } from "@/app/const/caseMap";
 
 export async function generateMetadata({
   searchParams,
@@ -97,8 +99,28 @@ async function Index({ searchParams }: { searchParams: { id: string } }) {
           <h2 className="text-center text-2xl text=[#333] font-bold">
             典型案例
           </h2>
-          {/* <ul className="mt-10 flex flex-wrap">123</ul> */}
-          <ul className="mt-10 flex flex-wrap max-w-6xl mx-auto gap-[2%]">
+          <ul className="mt-10">
+            {classic_case[0].aldatas.map((i) => (
+              <li
+                key={i.id}
+                className="px-5 py-[18px] sm:py-6 rounded group hover:bg-[#f5f5f6] cursor-pointer"
+              >
+                <Link
+                  href={`/business/case?type=${idToCase[i.type]}&active=${
+                    i.id
+                  }`}
+                >
+                  <p className="text-sm whitespace-nowrap text-ellipsis overflow-hidden group-hover:text-primary">
+                    {i.title}
+                  </p>
+                  <p className="text-xs mt-2 whitespace-nowrap text-ellipsis overflow-hidden text-[#999]">
+                    {i.desc}
+                  </p>
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <ul className="mt-10 sm:mt-16 flex flex-wrap max-w-6xl mx-auto gap-[2%]">
             {classic_case[0].images.map((i, index) => (
               <li key={index} className="w-[48%] md:w-[32%] lg:w-[12.5%] mb-8">
                 <Image

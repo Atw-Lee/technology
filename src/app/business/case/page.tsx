@@ -2,7 +2,7 @@
  * @Author: atwlee
  * @Date: 2023-12-23 10:41:48
  * @LastEditors: atwlee
- * @LastEditTime: 2024-01-13 13:09:43
+ * @LastEditTime: 2024-01-14 14:40:34
  * @Description:
  * @FilePath: /technology/src/app/business/case/page.tsx
  */
@@ -12,23 +12,15 @@ import { getDashboardData } from "@/app/api/getDashboard";
 import Layout from "@/app/components/layout";
 import Content from "./content";
 import { getCaseTypeMetaData } from "@/app/api/getMeta";
-
-const typeObj = {
-  gov: "1",
-  net: "2",
-  bank: "3",
-  electric: "4",
-  insurance: "5",
-  enterprise: "6",
-};
+import { caseToId } from "@/app/const/caseMap";
 
 export async function generateMetadata({
   searchParams,
 }: {
-  searchParams: { type: keyof typeof typeObj };
+  searchParams: { type: keyof typeof caseToId };
 }) {
   const metaData = await getCaseTypeMetaData(
-    Number(typeObj[searchParams.type])
+    Number(caseToId[searchParams.type])
   );
   return {
     ...metaData,
@@ -38,13 +30,13 @@ export async function generateMetadata({
 async function Index({
   searchParams,
 }: {
-  searchParams: { type: keyof typeof typeObj; active?: string };
+  searchParams: { type: keyof typeof caseToId; active?: string };
 }) {
   if (!searchParams.type) {
     notFound();
   }
   const { menu_datas } = await getDashboardData();
-  const caseData = await getCaseData(typeObj[searchParams.type]);
+  const caseData = await getCaseData(caseToId[searchParams.type]);
   const caseTypes = menu_datas.find((i) => i.id === 3)?.children;
 
   return (
@@ -60,4 +52,3 @@ async function Index({
 }
 
 export default Index;
-
