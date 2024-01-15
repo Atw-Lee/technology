@@ -2,7 +2,7 @@
  * @Author: atwlee
  * @Date: 2023-12-17 14:29:42
  * @LastEditors: atwlee
- * @LastEditTime: 2024-01-03 21:50:54
+ * @LastEditTime: 2024-01-15 22:11:35
  * @Description:
  * @FilePath: /technology/tailwind.config.ts
  */
@@ -15,9 +15,11 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      // 自定义主题颜色
       colors: {
         primary: "#25cad2",
       },
+      // 自定义动画
       keyframes: {
         "width-process": {
           "0%": { width: "0" },
@@ -28,19 +30,6 @@ const config: Config = {
         "width-process": "width-process 700ms linear 1",
       },
     },
-    // colors: {
-    //   // primary: "#25cad2",
-    //   blue: "#1fb6ff",
-    //   purple: "#7e5bef",
-    //   pink: "#ff49db",
-    //   orange: "#ff7849",
-    //   green: "#13ce66",
-    //   yellow: "#ffc82c",
-    //   "gray-dark": "#273444",
-    //   gray: "#8492a6",
-    //   "gray-light": "#d3dce6",
-    //   white: "#fff",
-    // },
   },
   plugins: [],
 };

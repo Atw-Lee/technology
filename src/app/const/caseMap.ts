@@ -1,10 +1,8 @@
-import React from "react";
-
 /*
  * @Author: atwlee
  * @Date: 2024-01-14 14:39:20
  * @LastEditors: atwlee
- * @LastEditTime: 2024-01-14 14:44:52
+ * @LastEditTime: 2024-01-15 21:56:43
  * @Description:
  * @FilePath: /technology/src/app/const/caseMap.ts
  */

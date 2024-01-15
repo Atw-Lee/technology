@@ -2,7 +2,7 @@
  * @Author: atwlee
  * @Date: 2023-12-17 15:30:53
  * @LastEditors: atwlee
- * @LastEditTime: 2023-12-31 11:10:45
+ * @LastEditTime: 2024-01-15 22:15:25
  * @Description:
  * @FilePath: /technology/src/app/components/layout/index.tsx
  */
@@ -18,7 +18,9 @@ async function Layout({ children }: { children: React.ReactNode }) {
 
   return (
     <div>
+      {/* Header部 */}
       <Header logo={webSit.logo} telephone={webSit.telephone} menus={menus} />
+      {/* 右侧操作区 */}
       <SideBar
         topImg={sideBar.top}
         consultImg={sideBar.consult}
@@ -30,6 +32,7 @@ async function Layout({ children }: { children: React.ReactNode }) {
         tiktokQRImg={sideBar.tiktokQC}
       />
       <main className="pt-[60px]">{children}</main>
+      {/* Footer部分 */}
       <Footer
         copyright={webSit.icp}
         copyrightLink={webSit.icp_link}
