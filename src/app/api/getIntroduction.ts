@@ -18,5 +18,8 @@ interface Item {
 }
 
 export const getIntroductionData = async () => {
-  return request<Item[]>("api/get_page_data?type=intro");
+  return request<Item[]>("api/get_page_data?random=${Math.random()}&type=intro", {
+    headers: {
+      'Cache-Control': 'no-cache',
+    }});
 };

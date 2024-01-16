@@ -30,5 +30,8 @@ export interface NewsData {
 }
 
 export const getNewsList = async (page = 1) => {
-  return request<RootObject>(`api/get_page_data?type=newsList&page=${page}`);
+  return request<RootObject>(`api/get_page_data?random=${Math.random()}&type=newsList&page=${page}`, {
+    headers: {
+      'Cache-Control': 'no-cache',
+    }});
 };

@@ -45,5 +45,8 @@ interface Core {
 }
 
 export const getProductDetail = async (id: string) => {
-  return request<RootObject>(`api/get_page_data?type=product&id=${id}`);
+  return request<RootObject>(`api/get_page_data?random=${Math.random()}&type=product&id=${id}`, {
+    headers: {
+      'Cache-Control': 'no-cache',
+    }});
 };

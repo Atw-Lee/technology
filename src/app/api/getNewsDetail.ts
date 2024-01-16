@@ -18,5 +18,8 @@ interface RootObject {
 }
 
 export const getNewsDetail = async (id: string) => {
-  return request<RootObject>(`api/get_page_data?type=newsDetail&id=${id}`);
+  return request<RootObject>(`api/get_page_data?random=${Math.random()}&type=newsDetail&id=${id}`, {
+    headers: {
+      'Cache-Control': 'no-cache',
+    }});
 };

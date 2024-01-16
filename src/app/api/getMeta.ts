@@ -22,7 +22,10 @@ export const getMetaData = async (id: string): Promise<Metadata> => {
         seodesc: string;
       };
     }[]
-  >(`api/get_page_data?type=menuDetail&id=${id}`);
+  >(`api/get_page_data?random=${Math.random()}&type=menuDetail&id=${id}`, {
+    headers: {
+      'Cache-Control': 'no-cache',
+    }});
 
   return {
     title: data[0].seoData.seotitle,
@@ -37,7 +40,10 @@ export const getMenuData = async (id: string) => {
       title: string;
       banner: string;
     }[]
-  >(`api/get_page_data?type=menuDetail&id=${id}`);
+  >(`api/get_page_data?random=${Math.random()}&type=menuDetail&id=${id}`, {
+    headers: {
+      'Cache-Control': 'no-cache',
+    }});
 
   return {
     title: data[0].title,

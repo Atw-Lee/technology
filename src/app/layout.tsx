@@ -12,6 +12,9 @@ import "./globals.css";
 import { getMetaData } from "./api/getMeta";
 
 // 首页的Meta数据
+// export const dynamic = 'force-dynamic';
+import { Metadata } from "next/types";
+
 export async function generateMetadata() {
   const metaData = await getMetaData("1");
   return {

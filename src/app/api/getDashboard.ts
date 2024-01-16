@@ -71,5 +71,8 @@ interface BannerData {
 }
 
 export const getDashboardData = async () => {
-  return request<Data>("api/get_index_data");
+  return request<Data>("api/get_index_data?random=${Math.random()}", {
+    headers: {
+      'Cache-Control': 'no-cache',
+    }});
 };

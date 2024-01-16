@@ -8,8 +8,12 @@
  */
 export default async function request<T = {}>(url: string, init?: RequestInit) {
   const res = await fetch(process.env.NEXT_PUBLIC_REQUEST_HOST + url, {
+    // next: {
+    //   revalidate: 3600,
+    //   'Cache-Control': 'no-cache',
+    // },
     next: {
-      revalidate: 3600,
+      revalidate: 0,
     },
     ...init,
   });

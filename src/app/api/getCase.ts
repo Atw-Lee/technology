@@ -18,5 +18,8 @@ export interface CaseItem {
 }
 
 export const getCaseData = async (id: string) => {
-  return request<CaseItem[]>(`api/get_page_data?type=anli&id=${id}`);
+  return request<CaseItem[]>(`api/get_page_data?random=${Math.random()}&type=anli&id=${id}`, {
+    headers: {
+      'Cache-Control': 'no-cache',
+    }});
 };

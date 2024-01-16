@@ -19,5 +19,8 @@ interface Item {
 }
 
 export const getContactData = async () => {
-  return request<Item[]>("api/get_page_data?type=contact");
+  return request<Item[]>("api/get_page_data?random=${Math.random()}&type=contact", {
+    headers: {
+      'Cache-Control': 'no-cache',
+    }});
 };
