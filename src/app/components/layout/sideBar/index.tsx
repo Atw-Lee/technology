@@ -13,6 +13,7 @@ import ScrollTop from "./scrollTop";
 interface IProps {
   topImg: string;
   consultImg: string;
+  consultUrl: string;
   tel: string;
   telImg: string;
   wechatImg: string;
@@ -25,6 +26,7 @@ function Index(props: IProps) {
   const {
     topImg,
     consultImg,
+    consultUrl,
     tel,
     telImg,
     wechatImg,
@@ -54,7 +56,7 @@ function Index(props: IProps) {
             className="w-[18px] h-[18px]"
           />
         </div>
-        <span className="font-bold text-white">{"点我咨询"}</span>
+        <a href={consultUrl} target="_blank"><span className="font-bold text-white">{"点我咨询"}</span></a>
       </li>
       <li
         className={`${defaultClass} w-44 top-[102px] hover:left-[-126px] transition-all duration-300`}

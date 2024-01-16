@@ -24,6 +24,7 @@ async function Layout({ children }: { children: React.ReactNode }) {
       <SideBar
         topImg={sideBar.top}
         consultImg={sideBar.consult}
+        consultUrl={sideBar.consultLink}
         tel={webSit.telephone}
         telImg={sideBar.tel}
         wechatImg={sideBar.wechat}
